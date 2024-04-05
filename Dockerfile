@@ -16,4 +16,4 @@ RUN ./gradlew build -x test
 EXPOSE 8080
 
 # Comando para ejecutar la aplicación Spring Boot al iniciar el contenedor
-CMD ["java", "-jar", "build/libs/platzi-market-0.0.1-SNAPSHOT.jar"]
+CMD ["./gradlew","bootRun"]
