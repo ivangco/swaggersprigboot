@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  your-application:
+    build: .
+    ports:
+      - "8090:8090"
+    depends_on:
+      - db # Si tu aplicación depende de una base de datos, por ejemplo
+
+  # Definir otros servicios si es necesario, como una base de datos
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: platzi
+      POSTGRES_DB: platzi-market
+    volumes:
+      - ./dto.sql:/sql/dto.sql
+      - ./str.sql:/sql/str.sql
